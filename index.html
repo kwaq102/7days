@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napisz program, który wyświetlać będzie jakie zajecia dodatkowe ma użytkownik w
+        zależności od dnia tygodnia. Użytkownik podaje dzień tygodnia np. “wtorek” a
+        program wyświetla zajęcia jakie dzisiaj ma użytkownik:</title>
+</head>
+<body>
+
+    <h1>Plan tygodnia</h1>
+    
+    <form action="">
+        <label for="day">
+            Wybierz dzień
+            <select name="day" id="day">
+                <option value="mondey">Poniedziałek</option>
+                <option value="tuesday">Wtorek</option>
+                <option value="wednesday">Środa</option>
+                <option value="thrusday">Czwartek</option>
+                <option value="friday">Piatek</option>
+                <option value="saturday">Sobota</option>
+                <option value="sunday">Niedziela</option>
+            </select>
+
+        </label>
+
+        <button type="submit">Pokaż</button>
+
+    </form>
+
+    <p class="plan"></p>
+
+    <script src="index.js"></script>
+    <!-- <script src="index2.js"></script> -->
+</body>
+</html>
