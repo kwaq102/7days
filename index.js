@@ -16,32 +16,47 @@ g. niedziela: wolne
 const description = document.querySelector('.plan');
 const btn = document.querySelector('button');
 
+const days = document.querySelector('#days')
 const allDays = document.querySelectorAll('option');
 
 const arrDays = [...allDays];
 
-console.log(arrDays)
+let day1 = 'mondey';
+console.log(day1)
 
-let day;
+arrDays.forEach(day => day.addEventListener('click', () => {
+    day1 = day.value;
+}));
+console.log(day1)
 
 const showPlan = (e) => {
     e.preventDefault();
 
-    // for (const el of arrDays) {
-    //     console.log(el.value);
-    // }
-
-
-    // switch (day) {
-    //     case 'mondey':
-    //         description.textContent = 'W pniedziałek: piłka nożna';
-    //         break;
-    //     case 'tuesday':
-    //         description.textContent = 'wtorek: język angielski';
-    //         break;
-    //     default:
-    //         description.textContent = 'nie działa';
-    // }
+    switch (day1) {
+        case 'mondey':
+            description.textContent = 'W pniedziałek: piłka nożna';
+            break;
+        case 'tuesday':
+            description.textContent = 'wtorek: język angielski';
+            break;
+        case 'wednesday':
+            description.textContent = 'Środa: Kurs programowania';
+            break;
+        case 'thrusday':
+            description.textContent = 'Czwartek: Wolne';
+            break;
+        case 'friday':
+            description.textContent = 'piątek: kurs tenisa';
+            break;
+        case 'saturday':
+            description.textContent = 'sobota: spotkania ze znajomymi';
+            break;
+        case 'sunday':
+            description.textContent = 'niedziela: Wolne';
+            break;
+        default:
+            description.textContent = 'nie znam takiego dnia tygodnia';
+    }
 }
 
 btn.addEventListener('click', showPlan);
