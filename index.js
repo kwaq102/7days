@@ -13,26 +13,27 @@ g. niedziela: wolne
 
 */
 
+const form = document.querySelector('form')
 const description = document.querySelector('.plan');
 const btn = document.querySelector('button');
 
-const days = document.querySelector('#days')
 const allDays = document.querySelectorAll('option');
 
 const arrDays = [...allDays];
 
-let day1 = 'mondey';
-console.log(day1)
-
-arrDays.forEach(day => day.addEventListener('click', () => {
-    day1 = day.value;
-}));
-console.log(day1)
+let day = '';
 
 const showPlan = (e) => {
     e.preventDefault();
 
-    switch (day1) {
+    // console.log(e.target[0].value)
+
+    day = e.target[0].value;
+
+    switch (day) {
+        case 'choose':
+            description.textContent = 'WYBIERZ DZIEŃ TYGODNIA!';
+            break;
         case 'mondey':
             description.textContent = 'W pniedziałek: piłka nożna';
             break;
@@ -59,4 +60,4 @@ const showPlan = (e) => {
     }
 }
 
-btn.addEventListener('click', showPlan);
+form.addEventListener('submit', showPlan);
